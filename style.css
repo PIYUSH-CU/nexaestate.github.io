@@ -1,11 +1,12 @@
 /* Global CSS Elements */
 :root{
     --vb:rgb(151, 76, 222);
+    --bgc:rgb(232, 232, 229);
 }
 
 body {
     padding: 2.5rem;
-    background-color: antiquewhite;
+    background-color: var(--bgc);
     font-family: 'arial';
 }
 
@@ -309,7 +310,7 @@ button:hover {
     padding: 1em;
     border-radius: 1em;
     border: 1px solid grey;
-    background-color: antiquewhite;
+    background-color: var(--bgc);
     font-size: 1em;
 }
 
