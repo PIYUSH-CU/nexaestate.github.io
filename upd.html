@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add New Property</title>
+    <link rel="stylesheet" href="updStyle.css">
+</head>
+<body>
+
+    <div class="property-form-container">
+        <h1>Add New Property</h1>
+        <form action="/PropertyServlet" method="POST" enctype="multipart/form-data">
+            <div class="form-content">
+                <!-- Left Side: Image Upload -->
+                <div class="form-left">
+                    <div class="form-group">
+                        <label for="property_image">Upload Property Image</label>
+                        <input type="file" id="property_image" name="property_image" accept="image/*" onchange="previewImage(event)">
+                    </div>
+                    <div class="image-preview">
+                        <img id="imageDisplay" src="#" alt="Image Preview" style="display:none;">
+                    </div>
+                </div>
+
+                <!-- Right Side: Other Form Fields -->
+                <div class="form-right">
+                    <div class="form-group">
+                        <input type="text" id="property_name" name="property_name" placeholder="Property Title" maxlength="30">
+                    </div>
+                    
+                    <div class="form-group">
+                        <input type="text" id="property_address" name="property_address" placeholder="Property Adddress" maxlength="100">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="property_city" name="property_city" placeholder="City" maxlength="20">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" id="property_country" name="property_country" placeholder="Country" maxlength="20">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="number" id="property_cost" name="property_cost" placeholder="Cost in Rupees" step="0.01" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property_available_for">Available For</label>
+                        <select id="property_available_for" name="property_available_for" required>
+                            <option value="rent">Rent</option>
+                            <option value="sale">Sale</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="property_type">Property Type</label>
+                        <select id="property_type" name="property_type" required>
+                            <option value="apartment">Apartment</option>
+                            <option value="villa">Villa</option>
+                            <option value="office">Office</option>
+                        </select>
+                    </div>
+
+                    <!-- <div class="form-group">
+                        <label for="property_owner">Property Owner ID</label>
+                        <input type="number" id="property_owner" name="property_owner" required>
+                    </div> -->
+
+                    <div class="form-group">
+                        <label for="property_isVerified">
+                            <input type="checkbox" id="property_isVerified" name="property_isVerified">
+                            Verified Property
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-submit">
+                <button type="submit">Add Property</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function(){
+                var output = document.getElementById('imageDisplay');
+                output.src = reader.result;
+                output.style.display = 'block';
+            };
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+
+</body>
+</html>

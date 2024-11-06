@@ -1,0 +1,111 @@
+/* Global CSS Elements */
+:root{
+    --vb:rgb(151, 76, 222);
+    --bgc:rgb(245, 245, 245);
+}
+
+body {
+    padding: 2.5rem;
+    background-color: var(--bgc);
+    font-family: 'arial';
+}
+
+button {
+    background-color: var(--vb);
+    color: white;
+    border: none;
+    border-radius: 1.25rem;
+    padding: 0.625em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(117, 47, 182);
+}
+
+
+.property-form-container {
+    background-color: white;
+    padding: 2em;
+    /* max-width: 800px; */
+    margin: auto;
+    border-radius: 1.25em;
+}
+
+.property-form-container h1 {
+    text-align: center;
+    color: black;
+    margin-bottom: 1.5em;
+    font-size: 1.8em;
+    font-weight: 300;
+}
+
+.form-content {
+    display: flex;
+    gap: 2em;
+}
+
+.form-left, .form-right {
+    flex: 1;
+    margin: 2em;
+    padding: 0.5em;
+}
+
+
+
+.form-group {
+    margin-bottom: 1em;
+}
+
+.form-group label {
+    display: block;
+    font-weight: lighter;
+    color: darkslategray;
+    margin-bottom: 0.3em;
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="time"],
+.form-group select {
+    width: 90%;
+    background-color: var(--bgc);
+    padding: 0.8em;
+    border-radius: 1em;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 0.5em;
+}
+
+.form-group input[type="file"] {
+    padding: 0.5em;
+}
+
+.image-preview {
+    text-align: center;
+    margin-top: 1em;
+}
+
+.image-preview img {
+    max-width: 400px;
+    border-radius: 8px;
+}
+
+.form-submit {
+    text-align: center;
+    margin-top: 2em;
+}
+
+button[type="submit"] {
+    padding: 1em 2em;
+}
+
+@media (max-width: 768px) {
+    .form-content {
+        flex-direction: column;
+    }
+}

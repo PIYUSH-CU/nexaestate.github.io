@@ -221,7 +221,7 @@ button:hover {
     margin: auto;
 }
 
-.featured-prop-cards{
+/* .featured-prop-cards{
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -241,6 +241,51 @@ button:hover {
 .prop-card img{
     max-width: 20em;
     border-radius: 1em;
+} */
+
+.featured-prop-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2em;
+    padding: 1em;
+}
+
+/* Property card styling */
+.prop-card {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    text-align: start;
+    padding: 1em;
+    max-width: 100%;
+    border-radius: 1em;
+    /* background-color: #fff; */
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+    transition: transform 0.3s ease;
+}
+
+.prop-card:hover {
+    transform: scale(1.05);
+}
+
+.prop-card img {
+    width: 100%;
+    border-radius: 1em;
+    margin-bottom: 0.5em;
+}
+
+.prop-card h3, 
+.prop-card p {
+    margin: 0.3em 0;
+    color: darkslategray;
+}
+
+.prop-card h5 {
+    margin-top: 0.5em;
+    align-self: flex-end;
+    font-size: 1.1em;
+    color: rgb(151, 76, 222);
+    font-weight: bold;
 }
 
 .contact-us{
